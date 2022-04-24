@@ -1,0 +1,46 @@
+{% load static %}
+{% load cloudinary %}
+
+<!-- The nav section begins here -->
+<nav class="navi"> 
+    <div class="container">
+        <div class="logo">
+            <h3 class="sol">SOL <span>.</span></h3>
+        </div>
+        <div class="nav-links">
+            <div class="bar"><i class="awe fas fa-bars fa-2x light"></i></div>
+            <div class="nav-list-cont">
+                <ul class="nav-list">
+                    <li><a class="lnk" href="/">Home</a></li>
+                    <li><a class="lnk" href="/mission_fields">Mission Fields</a></li>
+                    <li><a class="lnk" href="#board">Boards</a></li>
+                    <li><a class="lnk" href="/blog">Blog</a></li>
+                    <li><a class="lnk" href="/about">About us</a></li>
+                    <li><a class="lnk" href="/donate">Donate</a></li>
+                    <li><a class="lnk" href="#contact">Contact</a></li>
+                    {% comment %} <li>
+                        <form class="lnk" method=POST action="{% url 'search_mission' %}"> 
+                            {% csrf_token %}
+                            <input type="search" placeholder="Search Missions" name="searched">
+                            <button type="submit">Search</button>
+                        </form>
+                    </li> {% endcomment %}
+                </ul>                   
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- The nav section ends here -->
+
+{% for message in messages %}
+{% if 'success' in message.tags %}
+<div class=" success " style="">
+  <p class="success-text alert alert-{{class}}">{{ message|striptags }}</p>
+</div>
+
+{% elif 'error' in message.tags %}
+<div class="failure ">
+  <p class="fail-text alert alert-{{class}}">Error! {{ message|striptags }}</p>
+</div>
+{% endif %}
+{% endfor %} 

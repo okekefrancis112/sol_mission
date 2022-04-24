@@ -1,0 +1,117 @@
+:root {
+  --animation-left: animate-from-left ease-in 0.8s;
+  --animation-bottom: animate-from-bottom ease-in 0.8s;
+  --animation-top: animate-from-top ease-in 0.8s;
+  --animation-right: animate-from-right ease-in 0.8s;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about-us-banner {
+  position: relative;
+  height: 60vh;
+  width: 100vw;
+  background: #01266d;
+  padding-top: 15rem;
+  overflow-y: hidden;
+}
+
+.about-us-content {
+  padding: 4rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  animation: var(--animation-bottom);
+}
+
+.about-us-content h5 {
+  color: rgb(134, 132, 132);
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+@keyframes animate-from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(5%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-from-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    transform: translateY(-2%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate-from-top {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(4%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate-from-right {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.about-details {
+  background: #fff;
+  border-right: 0.1rem solid rgb(230, 227, 227);
+  padding: 1rem;
+}
+
+.banner p {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  animation: var(--animation-left);
+}
+
+.banner h3 {
+  animation: var(--animation-left);
+}
+
+.slant-bar {
+  height: 5rem;
+  width: 100vw;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  bottom: -5rem;
+  transform: skewY(-2deg);
+}

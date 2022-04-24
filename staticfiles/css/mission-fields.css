@@ -1,0 +1,209 @@
+:root {
+  --blue: rgb(1, 68, 112);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+body {
+  background: var(--light);
+}
+
+/* The mission fields banner begins here */
+.mission-fields-banner {
+  height: 50vh;
+  background: white;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("../img/blog-pic1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.text-content h3 {
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--light);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.text-content p {
+  color: var(--light);
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.visual-content {
+  position: relative;
+  overflow: hidden;
+}
+.round-ball {
+  border: 1rem solid var(--light);
+  position: absolute;
+  height: 50rem;
+  width: 50rem;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../img/blog-pic2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  right: -10rem;
+  top: -50%;
+}
+
+/* The mission fields banner ends here */
+
+/* the where to go section begins here */
+.where-to-go {
+  padding: 6rem;
+  display: grid;
+  background: white;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+}
+
+.where-to-go h2 {
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.thumbnail {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thumbnail a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  text-align: center;
+  width: 13rem;
+  height: 13rem;
+  margin-bottom: 4rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail a span {
+  display: block;
+  margin: 1rem 0;
+  margin-bottom: 3rem;
+}
+
+.thumbnail a:hover {
+  transform: scale(1.06);
+}
+
+.thumbnail a img {
+  /* border-radius: 5px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* the where to go section ends here */
+
+/* the navigate by categories section begins here */
+.categories {
+  width: 100%;
+  display: grid;
+  gap: 3rem;
+  padding: 6rem 0;
+}
+
+.categories h3 {
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.category {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.category a {
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  border: 2px solid teal;
+  text-align: center;
+  padding: 0.5rem 0;
+  z-index: 2;
+}
+
+.category a:hover {
+  background: teal;
+  color: var(--white);
+  font-weight: 500;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-100vw);
+    z-index: -1;
+  }
+
+  100% {
+    transform: translateX(0);
+    z-index: 0;
+  }
+}
+
+.edm-sub,
+.sub {
+  animation: animate 0.6s ease;
+  display: none;
+  border: none;
+  width: 100%;
+}
+
+.edm-sub a,
+.sub a {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+.edm-sub.show {
+  display: block;
+}
+
+.sub.reveal {
+  display: block;
+}
+/* the navigate by categories section ends here */

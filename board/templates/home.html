@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mq-sol.css' %}">
+    
+    <title>SOL-Home</title>
+</head>
+<body>
+
+    <!-- The nav section begins here -->
+
+        {% include 'header.html' %}
+
+    <!-- The nav section ends here -->
+
+    <!-- This is the header section -->
+    <header class="bxs-fs" id="home">
+        <section class="head container bxs-fs">
+            <div class="text">
+                <h3 class="hhz">welcome to <span>springs of life </span><br> evangelistic ministry</h3>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Voluptatibus quaerat voluptatem sequi quis 
+                    modi voluptates, alias impedit laboriosam molestiae aspernatur.
+                </p>
+                <a class="lnk" href="about.html">learn more</a>
+            </div>
+        </section>
+    </header>
+    <!-- Header ends here -->
+
+    <!-- The about section starts here -->
+    <section id="about">
+
+        <div class="about container">
+
+            <div class="about-header">
+                <h3 class="hhz">About us</h3>
+                <h4 class="hhz"> <span>Springs of Life</span> Evangelistic Minisitry (SOL)</h4>
+            </div>
+
+            <div class="about-dtls">
+
+                <div class="content">
+                
+                    <h5>Vision</h5>
+                    <p>To take the gospel of Jesus Christ to places where 
+                        the light of God's knowledge is dim, where the gospel 
+                        has not been heard and the power of God not known</p>
+
+                    <h5>Mission</h5>
+                    <p>
+                        We honor God by planting spirit empowered, Christ 
+                        centered and social relevant churches and schools 
+                        in every nation.
+                    </p>
+
+                    <h5>We Beleive...</h5>
+                    <h5>The Scriptures</h5>
+                    <p>
+                        The bible is the inspired word of God, 
+                        (II Timothyn 3:15-17, I Peter 1:23-25)
+                    </p>
+
+                    <a class="lnk" href="about.html">Read More</a>
+                    </div>
+
+                    <div class="about-image">
+                        <img src="{% static 'img/trustee3.jpeg' %}" alt="">
+                    </div>
+                </div>
+            </div>   
+
+        </div>
+    </section>
+    <!-- The about section ends here -->
+
+    <!-- The board of trustees begins here -->
+    <section class="board" id="board">
+        <div class="trustees container">
+            <h3 class="hhz">Board of Trustees</h3>
+
+            
+
+            {% for member in board %}
+            {% if member %}
+                <div class="member"> 
+                 
+                    <div class="member-image">
+                        {% if member.image %}
+                        <img src="{{ member.image.url }}" alt="">
+                        {% else %}
+                        <img src="{% static 'img/User.png' %}" alt="">
+                        {% endif %} 
+                    </div>
+                    <h5>{{ member.member.first_name }} {{ member.member.last_name }}</h5>
+                    <p>{{ member.title }}</p>
+                    {% comment %} <p><a href="{% url 'home_detail' member.id %}">{{ member.body|safe }}</a></p>  {% endcomment %}
+                    <p>{{ member.description|safe }}</p> 
+                          
+                </div>
+                {% else %}
+                no members yet
+                {% endif %}
+                {% endfor %}            
+        </div>
+    </section>
+    <!-- The board of trustees ends here -->
+
+    {% if message_name %}
+    <center>
+        <h2> Thanks {{ message_name }}!</h2>
+        <p>We received your email and will respond shortly...</p>
+    </center>
+    <br/><br/><br/>
+
+    {% else %}
+    <!-- The Contact section -->
+    <section class="contact-cont" id="contact">
+        <div class="contact-adjust container"> 
+            <h3 class="hhz cu">Contact US</h3>
+            <div class="contact">
+                <h3 class="header-2 hhz">Send us a message</h3>
+                <form action="" id="form-message" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Name" name="message-name">
+                    <input type="email" placeholder="Email" name="message-email">
+                    <textarea placeholder="Type your message here..." name="message" form="form-message">
+                    </textarea>
+                    <input type="submit" value="Send" >
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3 class="hhz">You can check us @</h3>
+                <p>Our Office is Located at 
+                    Lorem ipsum dolor sit amet 
+                    consectetur, adipisicing elit. 
+                    Suscipit, provident?
+                </p>
+                
+                <div class="contact-dtls">
+                    <p><span class="fac"><i class="fas fa-map-marker-alt clr"></i></span>  <span>Lorem ipsum dolor sit amet.</span></p>
+                    <p><span class="fac"><i class="fas fa-envelope clr"></i></span>  <span>Example@email.com</span></p>
+                    <p><span class="fac"><i class="fas fa-phone-square-alt clr"></i></span>  <span>+234 123456789</span></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <!-- The Contact section Ends -->
+
+    <footer class="foot">
+        <div class="mission-fields">
+            <h3>Mission Fields</h3>
+            <span></span>
+            <ul>
+                <li><a href="owudekudu.html">Owudekudu</a></li>
+                <li><a href="akogun.html">Akogun</a></li>
+                <li><a href="ishoko.html">Ishoko</a></li>
+                <li><a href="eriki-nla.html">Eriki-nla</a></li>
+                <li><a href="oyegunle.html">Oyegunle</a></li>
+            </ul>
+        </div>
+
+        <div class="mission-training-center">
+            <h3>Missions Training Center</h3>
+            <span></span>
+            <ul>
+                <li><a href="#mtc.html">MTC Professionals</a></li>
+                <li><a href="#mtc.html">MTC Tertiary</a></li>
+            </ul>
+        </div>
+
+        <div class="ministries">
+            <h3>Ministries</h3>
+            <span></span>
+            <ul>
+                <li><h4>Educational Missions</h4> 
+                        <ul class="inner-list">
+                            <li><a href="owudekudu.html#education">New Life Academy (Owudekudu)</a></li>
+                            <li><a href="ishoko.html#education">New Life Academy (Ishoko)</a></li>
+                        </ul>
+                </li>
+                <li><a href="#outreaches">SOL Outreaches</a></li>
+                <li><a href="#conferences">SOL Conferences</a></li>
+            </ul>
+        </div>
+
+        <div class="copy">
+            <i>&copy; Copyright {% now "Y" %}  </i>
+        </div>
+    </footer>
+
+
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/all.js' %}"></script>
+</body>
+</html>

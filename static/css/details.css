@@ -1,0 +1,197 @@
+:root {
+    --header-size: 64px;
+    --medium-size: 24px;
+    --small-size: 16px;
+    --smaller-size: 14px;
+    --text-color: #4d4c4c;
+    --header-color: #222222;
+    --weight-big: 600;
+    --weight-medium: 500;
+    --weight-small: 300;
+    --weight-normal: 400;
+  }
+  
+  /* ----------------- General Styling ----------------------  */
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  p {
+    /* color: var(--text-color); */
+    font-size: var(--smaller-size);
+  }
+  
+  /* ---------------- Reusable Classes -----------------------  */
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.3rem;
+  }
+  
+  .flex {
+    display: flex;
+    gap: 1.3rem;
+  }
+  
+  .column {
+    flex-flow: column;
+  }
+  
+  /* ===================== Regular CSS styles ================  */
+  
+  .blog_contents {
+    min-height: 100vh;
+    padding: 4rem;
+  }
+  
+  .blog_contents .header_title {
+    font-size: var(--header-size);
+    color: var(--header-color);
+    text-align: center;
+  }
+  
+  .blog_contents .header_subtitle {
+    text-align: center;
+  }
+  
+  .blog_contents .blog_post_image {
+    width: 100%;
+    min-height: 60vh;
+    max-height: 70vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  .blog_contents .blog_image img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .blog_contents .blog_content {
+    width: 60%;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .blog_contents .blog_content .blog_title {
+    color: var(--header-color);
+    font-size: var(--medium-size);
+    font-weight: var(--weight-big);
+  }
+  
+  .blog_contents .blog_content .blog_paragraph {
+    color: var(--text-color);
+    font-size: var(--smaller-size);
+    font-weight: var(--weight-normal);
+    line-height: 24px;
+  }
+  
+  .blog_contents .comment_section {
+    max-width: 60%;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  
+  .blog_contents .comment_section form {
+    width: 100%;
+  }
+
+  .blog_contents .comment_section form input label{
+    display: none;
+  }
+  
+  .blog_contents .comment_section form  #id_name {
+    height: 2.5rem;
+    padding: 0.25rem;
+    border: 1.2px solid var(--text-color);
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .blog_contents .comment_section form #id_body {
+    height: 4rem;
+    resize: none;
+    border: 1.2px solid black;
+    padding: 0.25rem;
+    border-radius: 5px;
+  }
+  
+  .blog_contents .comment_section form #button {
+    width: max-content;
+    background-color: transparent;
+    padding: 0.25rem 1.25rem;
+    border-radius: 5px;
+    border: 1.2px solid black;
+  }
+  
+  .blog_contents .comment_section form #button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .blog_contents .show_comments {
+    width: 60%;
+    max-height: 50vh;
+    overflow: auto;
+    margin: 0 auto;
+    padding: 1.25rem;
+  }
+  
+  .blog_contents .show_comments .comment_area {
+    width: 100%;
+    display: grid;
+    gap: 0.025rem;
+  }
+  
+  .blog_contents .show_comments .comment_area h3 {
+    color: var(--header-color);
+    font-size: var(--small-size);
+    font-weight: var(--weight-medium);
+  }
+  
+  .blog_contents .show_comments .comment_area p {
+    font-weight: var(--weight-normal);
+    line-height: 24px;
+  }
+  
+  /* =============== Media Queries =================== */
+  @media (max-width: 923px) {
+    :root {
+      --header-size: 32px;
+      --medium-size: 20px;
+    }
+  
+    .blog_contents .blog_post_image {
+      min-height: max-content;
+    }
+  
+    .blog_contents .blog_content,
+    .blog_contents .show_comments {
+      width: 90%;
+    }
+  
+    .blog_contents .comment_section {
+      max-width: 90%;
+    }
+  
+    .blog_contents .comment_section form button {
+      margin: 0 auto;
+    }
+  
+    .blog_contents .blog_content .blog_title,
+    .blog_contents .blog_content .blog_paragraph {
+      text-align: center;
+    }
+  }
+  

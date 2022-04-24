@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mq-sol.css' %}">
+    <link rel="stylesheet" href="{% static 'css/donate.css' %}">
+
+</head>
+
+<body>
+    
+    <!-- The nav section begins here -->
+
+    {% include 'header.html' %}
+
+    <!-- The nav section ends here -->
+
+       <!-- the banner starts from here -->
+    <div class="donate-banner">
+        <div class="donate-text-content">
+            <h3>Welcome to SOL Donation center</h3>
+            <p>We are most glad that you have decided to support our mission work</p>
+
+            <p>Make a donation of #{{ amount }} to {{ village }}.</p>
+            <script src="https://js.paystack.co/v1/inline.js"></script> 
+            <button class="btn" onclick="payWithPayStack()" id="django-paystack-button">Make Payment</button> 
+        </div>
+    </div>
+    <!-- the banner ends here -->
+
+        <script>
+            function payWithPayStack(){
+                let currency = "NGN";
+                let plan = "";
+                let ref = "{{ reference }}"
+                let obj = {
+                    key: '{{ paystack_public_key }}',
+                    email: '{{ email }}',
+                    amount: '{{ amount_value }}',
+                    ref: ref,
+                    callback: function(response){
+                        window.location.href = "{% url 'verify_payment' reference %}"
+                    }
+                }
+        
+                if (Boolean(currency)){
+                    obj.currency = currency.toUpperCase()
+                }
+                if (Boolean(plan)){
+                    obj.plan = plan;
+                }
+                var handler = PaystackPop.setup(obj);
+                handler.openIframe();
+            }
+        </script>
+
+<footer class="foot card">
+    <div class="mission-fields">
+        <h3>Mission Fields</h3>
+        <span></span>
+        <ul>
+            <li><a href="owudekudu.html">Owudekudu</a></li>
+            <li><a href="akogun.html">Akogun</a></li>
+            <li><a href="ishoko.html">Ishoko</a></li>
+            <li><a href="eriki-nla.html">Eriki-nla</a></li>
+            <li><a href="oyegunle.html">Oyegunle</a></li>
+        </ul>
+    </div>
+
+    <div class="mission-training-center">
+        <h3>Missions Training Center</h3>
+        <span></span>
+        <ul>
+            <li><a href="#mtc.html">MTC Professionals</a></li>
+            <li><a href="#mtc.html">MTC Tertiary</a></li>
+        </ul>
+    </div>
+
+    <div class="ministries">
+        <h3>Ministries</h3>
+        <span></span>
+        <ul>
+            <li><h4>Educational Missions</h4> 
+                    <ul class="inner-list">
+                        <li><a href="owudekudu.html#education">New Life Academy (Owudekudu)</a></li>
+                        <li><a href="ishoko.html#education">New Life Academy (Ishoko)</a></li>
+                    </ul>
+            </li>
+            <li><a href="#outreaches">SOL Outreaches</a></li>
+            <li><a href="#conferences">SOL Conferences</a></li>
+        </ul>
+    </div>
+
+    <div class="copy">
+        <i>&copy; Copyright {% now "Y" %}  </i>
+    </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/all.js' %}"></script>
+</body>
+</html>

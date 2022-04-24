@@ -1,0 +1,281 @@
+@media (max-width: 1049px) {
+  .mission-fields-banner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .visual-content {
+    display: none;
+  }
+
+  .thumbnail a {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 922px) {
+  .wrapper {
+    position: relative;
+    grid-template-columns: 1fr;
+    overflow-x: hidden;
+  }
+
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .copy {
+    align-items: center;
+  }
+
+  .bar {
+    opacity: 1;
+  }
+
+  .active .nav-list li a {
+    color: var(--white);
+  }  
+
+  .nav-list-cont {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    justify-content: center;
+    margin-top: -40rem;
+    transition-duration: 0.5s;
+  }
+
+  .nav-disp {
+    margin-top: 2.9rem;
+  }
+
+  .nav-list {
+    flex-flow: column;
+    width: 80%;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(31, 30, 30, 0.9);
+    border-bottom: 1rem solid var(--blue);
+  }
+
+  .nav-list li {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  .nav-list li:hover {
+    background: rgb(253, 252, 252);
+  }
+  .nav-list li:hover a {
+    color: rgb(20, 20, 20);
+  }
+
+  .nav-list li a {
+    color: rgb(252, 249, 249);
+  }
+
+  .about {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .about-header {
+    margin-bottom: 0rem;
+  }
+
+  .about-dtls {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .about-image {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-image img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .trustees h3 {
+    grid-area: 1 / span 2;
+  }
+
+  .trustees {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .member {
+    padding: 2rem 1rem;
+  }
+  .member h5 {
+    text-align: center;
+  }
+
+  .text h3.hhz {
+    font-size: 2rem;
+  }
+
+  .text p.para {
+    width: 100%;
+  }
+
+  .text a.lnk {
+    width: 10rem;
+  }
+
+  .contact-adjust {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "cu" "contact" "contact-info";
+  }
+
+  .contact {
+    grid-area: contact;
+    margin-left: 0;
+  }
+
+  .contact-info {
+    grid-area: contact-info;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .owu-nav {
+    /* display: none;  */
+  }
+
+  .owu-banner h3,
+  .ishoko-banner h3,
+  .akogun-banner h3,
+  .eriki-nla-banner h3,
+  .oyegunle-banner h3 {
+    text-align: center;
+  }
+
+  .school-info-content {
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .gallery-images {
+    flex-wrap: wrap;
+  }
+
+  .owu-educational-missions .school-info-content img,
+  .ishoko-educational-missions .school-info-content img,
+  .akogun-educational-missions .school-info-content img,
+  .eriki-nla-educational-missions .school-info-content img,
+  .oyegunle-educational-missions .school-info-content img {
+    width: 100% !important;
+    margin: auto;
+    height: 100%;
+  }
+  /* media query for sol-blog */
+
+  /* media query for sol-blog Ends*/
+}
+
+@media screen and (max-width: 740px) {
+
+  .donate-container{
+    width: 100% !important;
+    top: 80% !important; 
+  }
+
+  .donate-container form{
+    width: 100% !important;
+  } 
+
+  .modal {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .text-content {
+    overflow: visible;
+  }
+
+  .image-placeholder img {
+    margin: auto;
+    width: 50%;
+    object-fit: cover;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 710px) {
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .copy {
+    align-items: center;
+  }
+
+  .about-us-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .thumbnail a {
+    margin: auto;
+  }
+  .thumbnail a img {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .text h3.hhz {
+    font-size: 2rem;
+  }
+
+  .text p.para {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .text a.lnk {
+    width: 10rem;
+  }
+
+  .trustees h3 {
+    grid-area: 1 / span 1;
+  }
+
+  .trustees {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-us-content {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnail a {
+    margin: auto;
+  }
+
+  .thumbnail a img {
+    margin-right: 1rem;
+  }
+
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-images img {
+    margin: auto;
+  }
+}

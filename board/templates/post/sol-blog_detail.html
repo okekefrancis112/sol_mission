@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mq-sol.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>SOL</title>
+    <script src="{% static 'js/details.js' %}"></script>
+  </head>
+
+
+  <body>
+
+        <!-- The nav section begins here -->
+
+    {% include 'header.html' %}
+
+    <!-- The nav section ends here -->
+
+    <div class="blog_contents">
+      <div class="container">
+        <h1 class="header_title">SOL BLOG</h1>
+        <p class="header_subtitle">
+          Spirit of life evangelistic ministries is a missions organization
+        </p>
+      </div>
+      <div class="blog_post_image container">
+        <img src="{{ post.image.url }}" alt="" width="100%" />
+      </div>
+      <div class="blog_content grid"> 
+        <span>{{ post.created }}</span>
+        <div class="blog_post grid">
+          <div class="blog_title">
+            {{ post.title }}
+          </div>
+          <div class="blog_paragraph">
+            {{ post.body|safe }}
+          </div>
+        </div>
+      </div>
+
+      <div class="comment_section">
+        <form class="grid" action="." method="POST">
+           {% csrf_token %}
+          {{ comment_form }}
+          <input type="submit" value="Add comment" id="button">
+        </form>
+      </div>
+      <div class="show_comments grid">
+        {% for comment in comments %}
+        <div class="comment_area">
+          <h3> {{ comment.name }} </h3>
+          <p> {{ comment.body|linebreaks }} </p>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+
+    <footer class="foot card">
+      <div class="mission-fields">
+        <h3>Mission Fields</h3>
+        <span></span>
+        <ul>
+          <li><a href="owudekudu.html">Owudekudu</a></li>
+          <li><a href="akogun.html">Akogun</a></li>
+          <li><a href="ishoko.html">Ishoko</a></li>
+          <li><a href="eriki-nla.html">Eriki-nla</a></li>
+          <li><a href="oyegunle.html">Oyegunle</a></li>
+        </ul>
+      </div>
+
+      <div class="mission-training-center">
+        <h3>Missions Training Center</h3>
+        <span></span>
+        <ul>
+          <li><a href="#mtc.html">MTC Professionals</a></li>
+          <li><a href="#mtc.html">MTC Tertiary</a></li>
+        </ul>
+      </div>
+
+      <div class="ministries">
+        <h3>Ministries</h3>
+        <span></span>
+        <ul>
+          <li>
+            <h4>Educational Missions</h4>
+            <ul class="inner-list">
+              <li>
+                <a href="owudekudu.html#education"
+                  >New Life Academy (Owudekudu)</a
+                >
+              </li>
+              <li>
+                <a href="ishoko.html#education">New Life Academy (Ishoko)</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#outreaches">SOL Outreaches</a></li>
+          <li><a href="#conferences">SOL Conferences</a></li>
+        </ul>
+      </div>
+
+      <div class="copy">
+        <i>&copy; Copyright {% now "Y" %} </i>
+      </div>
+    </footer>
+
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/all.js' %}"></script>
+  </body>
+</html>
+
+
+
+    {% comment %} <body>
+        <h1>{{ post.title }}</h1>
+        <small>By: {{ post.author.first_name }}
+             {{ post.author.last_name}}
+        </small><br/>
+        <small>By: {{ post.author.username }}  
+             {{ post.author.last_name}}
+       </small><br/>
+        <hr>
+        <br/>
+        {{ post.body|safe }}
+        <br/><br/>
+
+        {% with comments.count as total_comments %}
+        <h2>
+            {{ total_comments }} comment{{ total_comments|pluralize}}
+        </h2>
+            
+        {% endwith %}
+
+
+        {% for comment in comments %}
+        <strong>
+            Comment {{ forloop.counter }} by {{ comment.name }} - {{ comment.date_added }}
+        </strong>
+        <br/>
+        {{ comment.body|linebreaks }}
+        {% empty %}
+        <p>There are no comments yet.</p>
+    
+        {% endfor %}
+
+        {% if new_comment %}
+        <h4> Your comment has been added.</h4>
+        <br/><br/>
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <p><input type="submit" value="Add comment"></p>
+        </form>
+        
+        {% else %} 
+        <h2>Add Comment...</h2>
+        <br/>
+            <form action="." method="POST">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <p><input type="submit" value="Add comment"></p>
+            </form>
+        {% endif %}
+    </body>
+</html> {% endcomment %}

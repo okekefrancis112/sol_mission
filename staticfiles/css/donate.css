@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .donate-banner {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.9)
+      ),
+      url("../img/donate-bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* filter: sepia(); */
+    margin-bottom: 60vh;
+  }
+  
+  .donate-text-content {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .donate-text-content h3{
+    padding: 2rem;
+    text-transform: uppercase;
+    color: rgb(252, 253, 253);
+    font-weight: 500;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .donate-text-content p {
+    padding: 2rem;
+    color: rgb(252, 253, 253);
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  
+  .donate-container {
+    top: 70%;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    width: 80%;
+    height: max-content;
+    padding: 2rem;
+    display: grid;
+    justify-items: center;
+    /* border: 4px solid black; */
+    /* align-content: center; */
+  }
+  
+  .donate-container form {
+    box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+    background: rgb(235, 231, 231);
+    height: max-content;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+
+  .donate-container form select {
+    width: 80%;
+    /* height: 80%; */
+    /* padding: 1rem; */
+    border: none;
+    /* outline: none; */
+    background: none;
+    border-bottom: 0.2rem solid teal;
+  }
+  
+  .donate-container form input {
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 0.2rem solid teal;
+  }
+  
+  .donate-container form input[type="submit"] {
+    border-bottom: none;
+    background: teal;
+    color: white;
+    height: 90%;
+    font-weight: 500;
+    font-size: 1.02rem;
+    width: 40%;
+  }
+  

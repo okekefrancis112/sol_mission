@@ -1,0 +1,268 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--light);
+}
+/* the beginning of the .eriki-nla-banner */
+.eriki-nla-banner {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60vh;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("../img/blog-pic5.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.eriki-nla-banner :is(h3, p) {
+  color: var(--light);
+  position: relative;
+}
+
+.eriki-nla-banner h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.eriki-nla-banner p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.eriki-nla-banner .eriki-nla-nav {
+  position: fixed;
+  width: max-content;
+  padding: 1rem 3rem;
+  height: 15rem;
+  border-radius: 0.5rem;
+  right: 2rem;
+  top: 60%;
+  transform: translateX(100%);
+  transition: all 0.4s ease-in-out;
+}
+
+.eriki-nla-nav.nav-show {
+  transform: translateX(0);
+}
+
+.pop {
+  position: fixed;
+  color: whitesmoke;
+  font-size: 2rem;
+  top: 70%;
+  right: 2rem;
+}
+
+#pops {
+  color: teal;
+}
+
+#pops:hover {
+  transform: scale(1.1);
+}
+
+.eriki-nla-banner .eriki-nla-nav ul {
+  list-style-type: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.eriki-nla-banner .eriki-nla-nav ul li {
+  background: rgb(214, 213, 213);
+  border-radius: 1rem;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+.eriki-nla-banner .eriki-nla-nav ul li:hover {
+  background: teal;
+  color: white;
+  transform: translateX(-1rem);
+}
+
+.eriki-nla-banner .eriki-nla-nav ul li:hover a {
+  color: white;
+}
+
+.eriki-nla-banner .eriki-nla-nav ul li a {
+  color: rgb(71, 71, 71);
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+/* the end of the .eriki-nla-banner  */
+
+/* the beginning of the educational ministry */
+.eriki-nla-educational-missions {
+  width: 100%;
+  background: white;
+  display: grid;
+  gap: 2rem;
+  padding: 8rem 0;
+}
+
+.eriki-nla-educational-missions .eriki-nla-header {
+  width: 100%;
+  display: grid;
+  margin-bottom: 4rem;
+}
+
+.eriki-nla-educational-missions .eriki-nla-header h3 {
+  font-weight: 400;
+  font-size: 3rem;
+  color: rgb(122, 122, 122);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.eriki-nla-educational-missions .eriki-nla-header p {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.eriki-nla-educational-missions .eriki-nla-header span {
+  width: 20%;
+  justify-self: center;
+  height: 1px solid black;
+  border-bottom: 2px solid #000;
+  margin: 1rem 0;
+}
+
+.eriki-nla-educational-missions .school-info {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+}
+
+.eriki-nla-educational-missions .school-info h3 {
+  font-weight: 400;
+  font-size: 2rem;
+  color: rgb(122, 122, 122);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.eriki-nla-educational-missions .school-info-content {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.eriki-nla-educational-missions .school-info-content img {
+  height: 90%;
+  width: 40%;
+  object-fit: cover;
+  margin-right: 3rem;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
+.gallery h3 {
+  font-weight: 400;
+  font-size: 2rem;
+  color: rgb(122, 122, 122);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery .gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery .gallery-images img {
+  height: 15rem;
+  padding: 1rem;
+  width: 15rem;
+  object-fit: cover;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.gallery .gallery-images img:hover {
+  transform: scale(1.1);
+}
+/* the end of the educational ministry */
+
+/* the outreach section starts here */
+
+.eriki-nla-outreaches,
+.eriki-nla-conferences,
+.eriki-nla-mtc,
+.eriki-nla-pia {
+  padding: 8rem 0;
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  background: rgb(255, 255, 255);
+}
+
+.eriki-nla-outreach-header,
+.eriki-nla-conferences-header {
+  width: 100%;
+  display: grid;
+}
+
+.eriki-nla-outreaches h3,
+.eriki-nla-conferences h3,
+.eriki-nla-mtc h3,
+.eriki-nla-pia h3 {
+  font-weight: 400;
+  font-size: 3rem;
+  color: rgb(122, 122, 122);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.eriki-nla-outreaches p,
+.eriki-nla-conferences p {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.eriki-nla-outreaches span,
+.eriki-nla-conferences span {
+  width: 20%;
+  justify-self: center;
+  height: 1px solid black;
+  border-bottom: 2px solid #000;
+  margin: 1rem 0;
+}
+
+.outreach-section p,
+.conferences-section p,
+.eriki-nla-mtc p,
+.eriki-nla-pia p {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+/* the outreach section ends here */

@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mq-sol.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owudekudu.css' %}">
+
+    <title>{{ community.name }}</title>
+
+</head>
+
+
+<body>
+      <!-- The nav section begins here -->
+
+      {% include 'header.html' %}
+      
+    <!-- The nav section ends here -->
+    
+    <!-- The Owudekudu banner starts here -->
+    <section class="owu-banner">
+        <h3>Welcome to {{ mission.name }}</h3>
+        <p>Thank you for your visit. <br/> We are glad to see you come here</p>
+        <div class="owu-nav">
+            <ul>
+                <li><a href="#education">Educational Missions</a></li>
+                <li><a href="#outreach">SOL Outreaches</a></li>
+                <li><a href="#conferences">SOL Conferences</a></li>
+                <li><a href="#pia">Partners in Action</a></li>
+                <li><a href="#mtc">Mission Training Center</a></li>
+            </ul>
+        </div>
+        <div class="pop"><i id="pops" class="fas fa-sign-in-alt"></i></div>
+    </section>
+    <!-- The Owudekudu banner ends here -->
+
+    <!-- The owudekudu Educational Mission starts here -->
+    <section class="owu-educational-missions">
+
+       <div class="owu-header">
+            <h3 id="education">Educational Missions</h3>
+            <p>This is our impact on the community as regards Education</p>
+            <span></span>
+       </div>
+
+       
+       <div class="school-info">
+            <h3>New Life Academy ({{ mission.name }})</h3> 
+          
+            <div class="school-info-content">
+                <img src="{{ mission.image.url }}" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint adipisci placeat hic atque minima a consequatur eligendi quas beatae, quae perferendis saepe cumque sed odit voluptates earum suscipit optio nesciunt vel officia. Illo placeat dolores temporibus, tenetur consequuntur, cumque atque eius ea distinctio officiis itaque natus, perferendis neque in! Vitae!</p>
+            </div>
+         
+        </div>
+       
+
+        <div class="gallery">
+            <h3>Check out more images in our gallery</h3>
+            <div class="gallery-images">
+                {% if not images %}
+                <p>-- No information available here yet, stay tuned --</p>
+                {% else %}
+                {% for image in images %}
+                
+                <img src="{{ image.image.url }}" alt="">
+                {% endfor %}
+             
+               
+                {% endif %}
+               
+            </div>
+        </div>
+    </section>
+    <!-- The Owudekudu Educational missions ends here -->
+
+    <!-- The owu outreaches section starts here -->
+    <div class="owu-outreaches">
+        
+        <div class="owu-outreach-header">
+            <h3 id="outreach">SOL Outreaches</h3>
+            <p>This is how we reach out the community</p>
+            <span></span>
+        </div>
+
+        <div class="outreach-section">
+            <p>-- No information available here yet, stay tuned --</p>
+        </div>
+
+    </div>
+
+    <!-- The owu outreaches section ends here -->
+
+    <!-- The owu conferences section starts here -->
+    <div class="owu-conferences">
+
+        <div class="owu-conferences-header">
+            <h3 id="conferences">SOL Conferences</h3>
+            <p>This is how we build and empower out the community</p>
+            <span></span>
+        </div>
+
+        <div class="conference-section">
+            <p>-- No information available here yet, stay tuned --</p>
+        </div>
+
+    </div>
+
+    <!-- The owu conferences section ends here -->
+
+    <!-- The MTC section starts here -->
+    <div class="owu-mtc">
+        <h3 id="mtc">Missions Training Center</h3>
+        <p>This is where we train people for missions</p>
+        <p>-- No information available here yet --</p>
+    </div>
+    <!-- The MTC section ends here -->
+
+    <!-- The PIA section starts here -->
+    <div class="owu-pia">
+        <h3 id="pia">Partners in Action</h3>
+        <p>This are the people we are in partners with, who support the missions work</p>
+        <p>-- No information available here yet --</p>
+    </div>
+    <!-- The PIA section ends here -->
+
+
+    <!-- The footer begins here -->
+    <footer class="foot">
+        <div class="mission-fields">
+            <h3>Mission Fields</h3>
+            <span></span>
+            <ul>
+                <li><a href="owudekudu.html">Owudekudu</a></li>
+                <li><a href="#akogun.html">Akogun</a></li>
+                <li><a href="ishoko.html">Ishoko</a></li>
+                <li><a href="#eriki-nla.html">Eriki-nla</a></li>
+                <li><a href="#oyegunle.html">Oyegunle</a></li>
+            </ul>
+        </div>
+
+        <div class="mission-training-center">
+            <h3>Missions Training Center</h3>
+            <span></span>
+            <ul>
+                <li><a href="#mtc.html">MTC Professionals</a></li>
+                <li><a href="#mtc.html">MTC Tertiary</a></li>
+            </ul>
+        </div>
+
+        <div class="ministries">
+            <h3>Ministries</h3>
+            <span></span>
+            <ul>
+                <li><h4>Educational Missions</h4> 
+                        <ul class="inner-list">
+                            <li><a href="owudekudu.html#education">New Life Academy (Owudekudu)</a></li>
+                            <li><a href="ishoko.html#education">New Life Academy (Ishoko)</a></li>
+                        </ul>
+                </li>
+                <li><a href="#outreaches">SOL Outreaches</a></li>
+                <li><a href="#conferences">SOL Conferences</a></li>
+            </ul>
+        </div>
+
+        <div class="copy">
+            <i>&copy; Copyright 2022  </i>
+        </div>
+    </footer>
+<!-- the footer ends here -->
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/owudekudu.js' %}"></script>
+
+</body>
+</html>

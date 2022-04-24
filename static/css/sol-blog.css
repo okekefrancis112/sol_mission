@@ -1,0 +1,367 @@
+:root {
+  --shadow-2: 1px 1px 10px 0px rgba(119, 119, 119, 0.9);
+}
+
+* {
+  transition: ease-in-out 0.4s;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* The Sol banner starts here */
+.sol-banner {
+  height: 60vh;
+  width: 100vw;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(1, 24, 48, 0.9),
+      rgba(1, 26, 51, 0.9)
+    ),
+    url("../img/solblog.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blog-banner {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+}
+
+.blog-banner h3.hhz {
+  animation: var(--animation-left);
+}
+
+.blog-banner p.para {
+  animation: var(--animation-right);
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+/* The Sol banner ends here */
+
+/* The Little navbar starts here */
+aside {
+  position: fixed;
+  right: 1rem;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  background: var(--light);
+  box-shadow: var(--shadow-2);
+  z-index: 1000;
+}
+aside .nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+aside .nav a {
+  color: black;
+  transition: ease-in-out 0.002s;
+}
+
+aside .nav a:hover {
+  color: rgb(121, 121, 121);
+}
+/* The Little navbar ends here */
+
+/* The Activities section starts here */
+
+.wrapper {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 8fr 3fr;
+  background: var(--light);
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.main-section {
+  padding: 4rem 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  height: max-content;
+}
+
+.main-section-card-container {
+  max-width: 25rem;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  max-height: 45rem;
+}
+
+.main-section-images {
+  height: 20rem;
+}
+
+.main-section-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-section-text-content {
+  display: grid;
+  /* gap: 1rem; */
+}
+
+.main-section-text-content h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(97, 96, 96);
+  margin-bottom: 1rem;
+}
+
+.main-section-text-content .main-line-rule {
+  border-bottom: 2px solid black;
+  justify-self: center;
+  margin-bottom: 1rem;
+  height: 4px;
+  width: 50%;
+}
+
+.main-section-card-container p {
+  color: rgb(97, 96, 96);
+  font-weight: 400;
+  text-align: justify;
+}
+
+.date-show span {
+  color: rgb(94, 92, 92);
+}
+
+.read {
+  color: teal;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid teal;
+  text-align: center;
+}
+
+.read:hover {
+  color: white;
+  background: teal;
+  font-weight: 500;
+}
+
+.aside-section {
+  align-self: flex-start;
+  padding: 1rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-top: 4rem;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.aside-image-holder,
+.latest-news,
+.news-card {
+  width: 100%;
+}
+
+.latest-news {
+  display: grid;
+  gap: 1rem;
+}
+
+.latest-news h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgb(121, 120, 120);
+}
+
+.aside-image-holder img,
+.news-card img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.comment {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.comment-box {
+  width: 70%;
+  margin-bottom: 4rem;
+}
+
+.comment-display {
+  display: grid;
+  /* border: 3px solid black; */
+  gap: 1rem;
+  width: 70%;
+}
+
+.comment-display span {
+  display: block;
+  width: 100%;
+}
+
+.comment-display .show-name {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.comment-display .show-comment p{
+  width: 100%
+}
+
+.comment h3 {
+  color: teal;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.comment-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.comment-form input,
+textarea {
+  font-weight: 500;
+  height: 3rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  transition: transform 0.3s ease-in-out;
+  background: none;
+  border-bottom: 2px solid teal;
+}
+
+.comment-form input[type="submit"] {
+  border: none;
+  background: teal;
+  color: white;
+  font-size: 0.9rem;
+  width: 20%;
+  justify-self: end;
+}
+
+textarea {
+  min-height: 10rem;
+  max-height: 20rem;
+  min-width: 100%;
+  padding: 2rem;
+  border: 2px solid teal;
+  resize: none;
+}
+
+.modal {
+  position: fixed;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  gap: 2rem;
+  top: 0;
+  left: -100vw;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.modal-header-container {
+  display: grid;
+  height: max-content;
+}
+
+.date-show {
+  margin-bottom: 2rem;
+  color: rgb(253, 253, 253);
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image-placeholder {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+    url(../celebrate.png);
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  /* border-right: 0.02rem solid white; */
+}
+.image-placeholder img {
+  border: 0.5rem solid rgb(246, 248, 248);
+  width: 100%;
+  object-fit: cover;
+}
+
+.text-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: scroll;
+}
+.text-content :is(h3, p) {
+  color: white;
+}
+.text-content :is(h3) {
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.text-content :is(a) {
+  color: teal;
+  text-decoration: none;
+  border: 1px solid teal;
+  text-align: center;
+  height: max-content;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-content :is(a):hover {
+  color: white;
+  background: teal;
+  font-weight: 500;
+}
+
+.line-rule {
+  width: 100%;
+  border-top: 0.1rem solid white;
+}
+
+.text-content :is(p) {
+  text-align: justify;
+}
+
+/* The Activities section ends here */

@@ -1,0 +1,137 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mq-sol.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mission-fields.css' %}">
+    
+
+    <title>Mission-fields</title>
+</head>
+
+
+<body>
+     <!-- The nav section begins here -->
+     
+     {% include 'header.html' %}
+
+    <!-- The nav section ends here -->
+
+   <!-- The banner begins here -->
+    <section class="mission-fields-banner">
+        <div class="text-content">
+            <h3>Welcome to the SOL Misson Fields</h3>
+            <p>Enjoy our content as you travel down the aisle.</p>
+        </div>
+        <div class="visual-content">
+            <div class="round-ball"></div>
+        </div>
+    </section>
+    <!-- The banner ends here -->
+
+    <!-- The search by location begins here -->
+    <section class="where-to-go">
+        <h2>Where would you like to visit?</h2>
+        
+       
+        <div class="thumbnail">
+            {% for mission in mission_fields %}
+            {% if mission %}
+            
+           
+            <a href="{% url 'mission_detail' mission.slug %}">
+                <img src="{{ mission.image.url }}" alt="">
+                <span>{{ mission.name }}</span>
+            </a>
+            
+            
+        
+            {% endif %}
+            {% endfor %}
+          
+            
+            
+        </div>
+      
+      
+
+        <div class="categories">
+            <h3>You can also navigate using our category</h3>
+            <div class="category">
+                <a class="ed-missions" href="#educational-missions">Educational Missions</a>
+                <div class="edm-sub">
+                    <a class="ed-sub" href="owudekudu.html">Owudekudu</a>
+                    <a class="ed-sub" href="ishoko.html">Ishoko</a>
+                </div>
+                <a class="no-child" href="#sol-outreaches">SOL Outreaches</a>
+                <a class="no-child" href="#SOL-Conferences">SOL Conferences</a>
+                <a class="no-child" href="#partners-in-action">Partners in Action</a>
+                <a class="mission-tc" href="#missions-training-center">Missions Training Center</a>
+                <div class="sub">
+                    <a class="mtc-sub" href="#missions-training-center-professional">Professionals</a>
+                    <a class="mtc-sub" href="#missions-training-center-tertiary">Tertiary</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- the search by location ends here -->
+
+<!-- The footer begins here -->
+    <footer class="foot">
+        <div class="mission-fields">
+            <h3>Mission Fields</h3>
+            <span></span>
+            <ul>
+                <li><a href="owudekudu.html">Owudekudu</a></li>
+                <li><a href="akogun.html">Akogun</a></li>
+                <li><a href="ishoko.html">Ishoko</a></li>
+                <li><a href="eriki-nla.html">Eriki-nla</a></li>
+                <li><a href="oyegunle.html">Oyegunle</a></li>
+            </ul>
+        </div>
+
+        <div class="mission-training-center">
+            <h3>Missions Training Center</h3>
+            <span></span>
+            <ul>
+                <li><a href="#mtc.html">MTC Professionals</a></li>
+                <li><a href="#mtc.html">MTC Tertiary</a></li>
+            </ul>
+        </div>
+
+        <div class="ministries">
+            <h3>Ministries</h3>
+            <span></span>
+            <ul>
+                <li><h4>Educational Missions</h4> 
+                        <ul class="inner-list">
+                            <li><a href="owudekudu.html#education">New Life Academy (Owudekudu)</a></li>
+                            <li><a href="ishoko.html#education">New Life Academy (Ishoko)</a></li>
+                        </ul>
+                </li>
+                <li><a href="#outreaches">SOL Outreaches</a></li>
+                <li><a href="#conferences">SOL Conferences</a></li>
+            </ul>
+        </div>
+
+        <div class="copy">
+            <i>&copy; Copyright {% now "Y" %}  </i>
+        </div>
+    </footer>
+<!-- the footer ends here -->
+
+
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/mission-fields.js' %}"></script>
+    <script src="{% static 'js/all.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<center>
+    {% if searched %}
+        <h1> You searched for {{ searched }}</h1>
+        <br/>
+        {% for mission in missions %}
+            <a href="{% url 'mission_detail' mission.slug %}">{{ mission }}</a>
+            <br/>
+        {% endfor %}
+    {% else %}
+        <h1> Invalid Search... </h1>
+    {% endif %}
+</center>

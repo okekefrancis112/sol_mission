@@ -1,0 +1,546 @@
+@import "about.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --teal: teal;
+  --white: #fff;
+  --light: #eeeded;
+  --font-weight-light: 100;
+  --font-weight-medium: 500;
+  --font-weight-heavy: 600;
+  --font-fam-1: "Poppins";
+  --font-fam-2: "lato";
+  --font-fam-3: "Montserrat";
+}
+
+* {
+  font-family: var(--font-fam-1);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition-duration: 0.4s;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Utilities */
+
+.light {
+  color: var(--light);
+}
+
+.hhz {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--light);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.para {
+  font-size: 1.2rem;
+  color: var(--light);
+  font-family: var(--font-fam-3);
+  text-transform: capitalize;
+  text-align: justify;
+  width: 50%;
+  line-height: 2rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.lnk {
+  color: var(--light);
+  text-decoration: none;
+  outline: none;
+  text-transform: capitalize;
+}
+
+.lnk:hover {
+  color: var(--light);
+  transform: scale(0.95);
+  /* border: none; */
+}
+
+header a {
+  padding: 1rem;
+  border: 0.1rem solid var(--white);
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+header a.lnk:hover {
+  background: rgba(3, 149, 247, 0.6);
+}
+
+.bc-fc {
+  width: 100%;
+  height: 100%;
+}
+
+.bxs-fs {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+/* Utilities */
+
+/* The navbar Styles */
+.navi {
+  position: fixed;
+  width: 100vw;
+  height: 4rem;
+  z-index: 100;
+  animation: var(--animation-top);
+}
+
+.active {
+  background: rgba(255, 255, 255);
+  transition: ease-in-out 0.5s;
+  box-shadow: 0 1px 2px 0px rgb(128, 127, 127);
+}
+.active .nav-list li a,
+.active .logo h3,
+.active .awe {
+  color: rgb(77, 76, 76);
+  font-weight: var(--font-weight-medium);
+}
+
+.active a:hover {
+  background: none;
+}
+
+.navi .container {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list-cont {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-disp {
+  margin-top: 3rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-list li {
+  padding: 0 1rem;
+}
+
+.nav-list li a:hover {
+  color: var(--teal);
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  align-content: center;
+  justify-items: center;
+}
+
+.bar {
+  opacity: 0;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+.awe:hover {
+  color: var(--teal);
+}
+
+.logo h3 {
+  color: var(--light);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--teal);
+}
+/* The navbar Styles */
+
+/* The header Styles */
+header {
+  background-image: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../img/banner.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+}
+
+header span {
+  color: var(--teal);
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  animation: var(--animation-right);
+}
+/* The Header Styles end */
+
+/* About us Styles here */
+.about {
+  /* width: 100vw; */
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "about-header about-header" "about-dtls about-dtls";
+}
+
+.about-header {
+  grid-area: about-header;
+}
+
+.about-header .hhz {
+  font-family: var(--font-fam-3);
+  font-weight: 400;
+  color: rgb(134, 132, 132);
+}
+
+.about-header h4.hhz {
+  font-size: 2rem;
+}
+
+.about-header h4 span {
+  color: var(--teal);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.content h5,
+p {
+  color: rgb(134, 132, 132);
+  line-height: 2rem;
+}
+
+.content h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: -2rem;
+}
+
+.content a.lnk {
+  color: rgb(100, 98, 98);
+  border: 0.2rem solid rgb(100, 99, 99);
+  padding: 1rem 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  height: 4rem;
+}
+
+.about-dtls {
+  grid-area: about-dtls;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about-image {
+  height: 100%;
+}
+
+.about-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+/* About us Styles ends here */
+
+/* The Board of Trustees */
+.board {
+  padding: 5rem 0;
+  background: var(--light);
+}
+
+.trustees {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.trustees h3 {
+  grid-area: 1 / span 3;
+  color: rgb(134, 132, 132);
+  animation: var(--animation-left);
+}
+
+.member {
+  background: var(--white);
+  padding: 2rem 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
+  animation: var(--animation-bottom);
+  /* max-width: 300px; */
+}
+
+.member h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.member p {
+  text-align: center;
+  max-width: 300px;
+}
+
+.member-image {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.member-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* The Board of Trustees Ends*/
+
+/* Contact us Starts */
+.contact-cont {
+  width: 100vw;
+  padding: 5rem 0;
+}
+
+.contact-adjust {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-cont h3.hhz {
+  color: rgb(134, 132, 132);
+}
+
+.contact-cont h3.cu {
+  grid-area: 1 / span 2;
+}
+
+.header-2 {
+  font-size: 1.5rem;
+  justify-self: start;
+}
+
+.contact {
+  /* padding: 3rem; */
+  display: grid;
+  margin-left: 6rem;
+}
+
+.contact form {
+  background: var(--light);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.contact form input {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem 2rem;
+  border: none;
+}
+
+.contact form input[type="submit"] {
+  width: 30%;
+  background: var(--teal);
+  color: var(--light);
+}
+
+.contact form input:focus {
+  border: 2px solid rgb(87, 86, 86);
+  outline: none;
+}
+
+.contact form textarea {
+  height: 10rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.contact form textarea:focus {
+  border: 2px solid rgb(87, 86, 86);
+  outline: none;
+}
+
+.contact-info {
+  margin-left: -2rem;
+  margin-top: 5.5rem;
+  background: rgb(59, 59, 59);
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 80%;
+  width: 80%;
+  gap: 1rem;
+  padding: 3rem 1rem;
+}
+.contact-info h3.hhz {
+  font-size: 1.5rem;
+}
+
+.contact-info p {
+  padding-left: 1rem;
+}
+
+.contact-dtls {
+  display: grid;
+  gap: 1rem;
+}
+
+.fac {
+  color: var(--teal);
+  padding-right: 1rem;
+}
+/* Contact us Ends */
+
+/* The footer starts here */
+.foot {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--light);
+  gap: 2rem;
+  border-top: 8px solid teal;
+}
+
+.foot a {
+  color: teal;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.foot h3 {
+  color: rgb(108, 109, 109);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.foot span {
+  width: 10%;
+  height: 1px;
+  border-bottom: 4px solid grey;
+  margin-bottom: 1rem;
+}
+
+.foot ul {
+  list-style-type: none;
+  letter-spacing: 0.3px;
+  line-height: 2rem;
+}
+
+.mission-fields,
+.ministries {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.mission-training-center {
+  display: flex;
+  flex-flow: column;
+}
+
+.ministries .inner-list {
+  padding-left: 2rem;
+}
+
+.ministries h4  {
+  font-weight: 500;
+  color: rgb(78, 76, 76);
+  text-transform: uppercase;
+}
+
+.copy {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.copy i {
+  font-style: normal;
+}
+/* The footer ends here */
+
+ .success{
+  z-index: 10000 !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0.5rem;
+  background: green;
+  /* margin-top: 2rem; */
+  align-items: center;
+} 
+
+ .failure,
+.form-register .panel-body{
+  z-index: 10000 !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0.5rem;
+  background: red;
+  /* margin-top: 2rem; */
+  justify-content: center;
+} 
+
+.success .success-text,
+ .failure .fail-text{
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
